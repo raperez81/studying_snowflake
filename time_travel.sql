@@ -9,9 +9,11 @@ insert into test_table (Product, id) values ('Monitor', 3);
 
 update test_table set Product = 'Mouse 1' where id = 1;
 
+select * from test_table;
+
 select * from test_table at(timestamp => to_timestamp_ltz('2023-12-27 12:30:00'));
 select * from test_table before(statement => '01b14550-0504-dfd4-0000-0002c8e35055');
-
+select * from test_table at(offset => -60*2);
 
 
 create table test_table2 clone test_table;
